@@ -1,10 +1,16 @@
+export EDIOR="vim"
+setopt AUTO_CD
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 bindkey -v
-#bindkey -M viins 'jj' vi-cmd-mode
+bindkey -M viins 'jj' vi-cmd-mode
+# vi style incremental search
 bindkey '^R' history-incremental-search-backward
+bindkey '^S' history-incremental-search-forward
+bindkey '^P' history-search-backward
+bindkey '^N' history-search-forward
 #bindkey '^G' send-break
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
@@ -45,6 +51,7 @@ zplug "plugins/systemd",   from:oh-my-zsh
 zplug "plugins/tmux",   from:oh-my-zsh
 zplug "plugins/web-search",   from:oh-my-zsh
 zplug "plugins/dircycle",   from:oh-my-zsh
+zplug "plugins/command-not-found", from:oh-my-zsh
 
 #Themes
 setopt prompt_subst # Make sure propt is able to be generated properly.
@@ -72,4 +79,4 @@ if ! zplug check --verbose; then
 fi
 
 # Then, source plugins and add commands to $PATH
-zplug load #--verbose
+zplug load --verbose

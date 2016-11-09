@@ -17,7 +17,7 @@ filetype off " required! turn off
 " inspired by spf13, 自定义需要的插件集合
 if !exists('g:bundle_groups')
     " let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'tmux', 'beta', 'json', 'nginx', 'golang', 'ruby', 'less', 'php', 'coffeescript']
-    let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'tmux', 'beta']
+    let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'tmux', 'ruby', 'beta']
 endif
 
 " ----------------------------------------------------------------------------
@@ -116,6 +116,7 @@ Plug 'thinca/vim-quickrun'
 Plug 'tpope/vim-fugitive'
 " gitgutter
 Plug 'airblade/vim-gitgutter'
+Plug 'itchyny/lightline.vim'
 
 " gundo
 " edit history, 可以查看回到某个历史状态
@@ -132,6 +133,11 @@ Plug 'kien/rainbow_parentheses.vim'
 " 主题 solarized
 " solarized
 Plug 'altercation/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
+Plug 'sjl/badwolf'
+Plug 'nanotech/jellybeans.vim'
+Plug 'junegunn/seoul256.vim'
+Plug 'itchyny/landscape.vim'
 " molokai
 " 主题 molokai
 Plug 'tomasr/molokai'
@@ -236,6 +242,8 @@ if count(g:bundle_groups, 'css')
 
     " 这个有坑, see issue https://github.com/wklken/k-vim/issues/49
     " Plug 'gorodinskiy/vim-coloresque'
+    Plug 'chrisbra/Colorizer'
+    let g:colorizer_auto_color = 1
 endif
 
 if count(g:bundle_groups, 'less')
@@ -246,7 +254,8 @@ endif
 
 if count(g:bundle_groups, 'html')
     " ###### emmet HTML complete #########
-    " Plug "mattn/emmet-vim"
+    " Plug 'mattn/emmet-vim'
+    " Plug 'xsunsmile/showmarks.git'
 endif
 
 if count(g:bundle_groups, 'nginx')
